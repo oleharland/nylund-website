@@ -10,24 +10,19 @@ body {
 }
 
 
-.fullBackground {
-  min-width: 100vw;
-  min-height: 100vh;
+.wrapper {
+  padding-left: 16px;
+  padding-right: 16px;
 }
-
-.container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.profilePicture {
+.profilePicture img {
+  width: 100%;
+  max-height: 60vh;
 }
 .introText {
-  margin-left: -80px;
   font-size: 16px;
   line-height: 1.6em;
-  max-width: 560px;
+  padding-left: 16px;
+  padding-right: 16px;
 }
 
 .headline {
@@ -54,6 +49,32 @@ body {
 footer {
   background: $black;
   color: $white;
-  padding-top: 80px;
-  padding-bottom: 160px;
+}
+.copyrights {
+  color: lighten( $black, 25% );
+}
+
+@media (min-width: 767px) {
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .introText {
+    margin-left: -80px;
+    max-width: 560px;
+    background: none;
+  }
+  .fullBackground {
+    min-width: 100vw;
+    min-height: 100vh;
+  }
+  .wrapper {
+    max-width: 960px;
+  }
+  footer {
+    padding-top: 80px;
+    padding-bottom: 160px;
+  }
+
 }
