@@ -2,3 +2,58 @@
 
 @import "reset.scss";
 @import "variables.scss";
+
+body {
+  font-family: "Gotham", Helvetica, Arial;
+  background: $white;
+  color: $black;
+}
+
+
+.fullBackground {
+  min-width: 100vw;
+  min-height: 100vh;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profilePicture {
+}
+.introText {
+  margin-left: -80px;
+  font-size: 16px;
+  line-height: 1.6em;
+  max-width: 560px;
+}
+
+.headline {
+  font-family: "GothamBold";
+  font-size: 56px;
+  color: $black;
+  line-height: 1em;
+  margin-bottom: 8px;
+}
+.subline {
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 1.2em;
+  color: $grey;
+  margin-bottom: 8px;
+}
+.copy {
+  margin-bottom: 8px;
+  font-size: 16px;
+  line-height: 1.6em;
+  color: $grey;
+}
+
+footer {
+  background: $black;
+  color: $white;
+  padding-top: 80px;
+  padding-bottom: 160px;
+}
