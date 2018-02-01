@@ -258,11 +258,9 @@ gulp.task('generate-service-worker', ['copy-sw-scripts'], () => {
 // try { require('require-dir')('tasks'); } catch (err) { console.error(err); }
 
 gulp.task('deploy', ['default'], cb => {
+
   const client = s3.createClient({
-    s3Client: new AWS.S3({
-      accessKeyId: 'AKIAIGRCXV7BS2FKD5MA',
-      secretAccessKey: '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'
-    })
+    s3Client: new AWS.S3(AWS.config.loadFromPath('./aws_config.json'))
   });
 
   const params = {
