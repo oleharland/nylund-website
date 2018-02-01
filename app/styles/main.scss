@@ -15,6 +15,7 @@ body {
   padding-right: 16px;
   padding-top: 40px;
   padding-bottom: 32px;
+  width: 100%;
 }
 .profilePicture img {
   width: 100%;
@@ -85,7 +86,18 @@ footer {
 
 }
 
+#mailingList {
+  background: $oceanBlue;
+}
 
+.mailingListLabel {
+  font-size: 24px;
+  color: $white;
+}
+
+form.mailingList span {
+  display: inline-block;
+}
 
 fieldset {
   display: inline-block;
@@ -102,46 +114,49 @@ fieldset {
   border-image-outset: initial;
   border-image-repeat: initial;
   min-width: -webkit-min-content;
-  padding: 30px;
+  padding: 0px;
 }
-.ghost-input {
+.mailingListInput {
   display: block;
-  font-weight:300;
   width: 100%;
   font-size: 24px;
   border:0px;
   outline: none;
-  width: 100%;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  color: $accentcolor;
-  background: $white;
-  padding: 10px 15px;
-  margin: 30px 0px;
+  color: $white;
+  background: $oceanBlue;
+  font-family: Gotham;
+  padding: 10px 12px;
+  margin: 8px 8px;
   -webkit-transition: all 0.1s ease-in-out;
   -moz-transition: all 0.1s ease-in-out;
   -ms-transition: all 0.1s ease-in-out;
   -o-transition: all 0.1s ease-in-out;
   transition: all 0.1s ease-in-out;
+  border-bottom:2px solid lighten($oceanBlue, 20%);
+}
+.mailingListInput::placeholder {
+  color: lighten($oceanBlue, 20%);
+}
+.mailingListInput:focus {
   border-bottom:2px solid $white;
 }
-.ghost-input:focus {
-  border-bottom:2px solid $accentcolor;
-}
-.ghost-button {
+.mailingListButton {
   background-color: transparent;
-  border:2px solid $lightgrey;
+  border:2px solid $white;
   padding:10px 30px;
   font-size: 16px;
-  min-width: 350px;
+  color: $white;
   -webkit-transition: all 0.1s ease-in-out;
   -moz-transition: all 0.1s ease-in-out;
   -ms-transition: all 0.1s ease-in-out;
   -o-transition: all 0.1s ease-in-out;
   transition: all 0.1s ease-in-out;
 }
-.ghost-button:hover {
-  color: $accentcolor;
-  border:2px solid $accentcolor;
+.mailingListButton:hover {
+  color: $oceanBlue;
+  border:2px solid $white;
+  background: $white;
 }
