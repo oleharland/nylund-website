@@ -88,14 +88,17 @@ footer {
 
 #mailingList {
   background: $oceanBlue;
+  padding: 16px 40px;
 }
-
+#mailingList span {
+  display: inline-block;
+}
 .mailingListLabel {
   font-size: 24px;
   color: $white;
 }
 
-form.mailingList span {
+.mailingList input {
   display: inline-block;
 }
 
