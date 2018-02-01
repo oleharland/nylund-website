@@ -146,6 +146,10 @@ fieldset {
 .mailingListInput:focus {
   border-bottom:2px solid $white;
 }
+.mailingListContainer {
+  margin: 0 auto;
+  width: 100%;
+}
 .mailingListButton {
   background-color: transparent;
   border:2px solid $white;
