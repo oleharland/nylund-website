@@ -59,6 +59,10 @@ footer {
   color: lighten( $black, 25% );
 }
 
+#sanctuaryAlbum {
+  background: $silver;
+}
+
 @media (min-width: 767px) {
   .container {
     display: flex;
