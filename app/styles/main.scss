@@ -176,6 +176,51 @@ fieldset {
 }
 
 @media (min-width: 767px) {
+  #socialFloating {
+  }
+  #socialFloating div {
+  }
+  .spotifyFloating {
+    background-color: #84bd00;
+  }
+  .spotifyFloatingWrapper, .facebookFloatingWrapper {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 88px;
+    height: 88px;
+  }
+  .spotifyFloatingWrapper {
+    bottom: 16px;
+    right: 128px;
+  }
+  .facebookFloatingWrapper {
+    bottom: 16px;
+    right: 16px;
+  }
+  .spotifyFloating, .facebookFloating {
+        height: 80px;
+        width: 80px;
+        border-radius: 80px;
+        -webkit-transition: all 0.1s ease-in-out;
+        -moz-transition: all 0.1s ease-in-out;
+        -ms-transition: all 0.1s ease-in-out;
+        -o-transition: all 0.1s ease-in-out;
+        transition: all 0.1s ease-in-out;
+  }
+  .spotifyFloating:hover, .facebookFloating:hover {
+    height: 88px;
+    width: 88px;
+    border-radius: 88px;
+  }
+  .facebookFloating {
+    background-color: #3B5998;
+
+  }
+  .facebookFloating:hover {
+    background-color: #3B5998;
+  }
   #mailingList {
     padding: 8px 16px;
   }
