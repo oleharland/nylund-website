@@ -29,6 +29,7 @@ body {
   line-height: 1.6em;
   padding-left: 16px;
   padding-right: 16px;
+  padding-bottom: 80px;
 }
 
 .headline {
@@ -60,9 +61,28 @@ footer {
   color: lighten( $black, 25% );
 }
 
+.externalLink:link, .externalLink:visited, .externalLink:active {
+  color: $oceanBlue;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  text-decoration: none;
+  padding-bottom: 4px;
+  border-bottom: 1px solid;
+}
+.externalLink:hover, .externalLink:focus {
+  color: $accentcolor;
+}
+.externalLink::after {
+    padding-left: 8px;
+    content: "⇀";
+}
+
 #mailingList {
   background: $oceanBlue;
-  padding: 8px 40px;
+  padding: 8px 0;
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
   -ms-transition: all 0.3s ease-in-out;
@@ -128,6 +148,7 @@ fieldset {
 }
 .mailingListContainer {
   display:inline-block;
+  padding: 0 8px;
 }
 
 #mailingList.success {
@@ -155,6 +176,12 @@ fieldset {
 }
 
 @media (min-width: 767px) {
+  #mailingList {
+    padding: 8px 16px;
+  }
+  mailingListContainer {
+    padding: 0 16px;
+  }
   .container {
     display: flex;
     align-items: center;
@@ -183,5 +210,4 @@ fieldset {
     width: 100%;
     top: 0px;
   }
-
 }
