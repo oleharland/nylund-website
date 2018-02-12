@@ -60,37 +60,6 @@ footer {
   color: lighten( $black, 25% );
 }
 
-@media (min-width: 767px) {
-  .container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .introText {
-    margin-left: -80px;
-    max-width: 560px;
-    background: none;
-  }
-  .fullBackground {
-    min-width: 100vw;
-    min-height: 100vh;
-  }
-  .wrapper {
-    max-width: 960px;
-    padding: 0;
-  }
-  footer {
-    padding-top: 80px;
-    padding-bottom: 160px;
-  }
-  #mailingList {
-    z-index: 99;
-    position: fixed;
-    width: 100%;
-    top: 0px;
-  }
-
-}
 #mailingList {
   background: $oceanBlue;
   padding: 8px 40px;
@@ -183,4 +152,36 @@ fieldset {
   border:2px solid $white;
   background: $white;
   cursor: pointer;
+}
+
+@media (min-width: 767px) {
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .introText {
+    margin-left: -80px;
+    max-width: 560px;
+    background: none;
+  }
+  .fullBackground {
+    min-width: 100vw;
+    min-height: 100vh;
+  }
+  .wrapper {
+    max-width: 960px;
+    padding: 0;
+  }
+  footer {
+    padding-top: 80px;
+    padding-bottom: 160px;
+  }
+  #mailingList {
+    z-index: 99;
+    position: fixed;
+    width: 100%;
+    top: 0px;
+  }
+
 }
