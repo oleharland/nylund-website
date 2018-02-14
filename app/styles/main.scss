@@ -81,7 +81,8 @@ footer {
 }
 
 #mailingList {
-  background: $oceanBlue;
+  background: $mailingListColor;
+  border-bottom: 1px solid darken($mailingListColor, 3%);
   padding: 8px 0;
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
@@ -95,7 +96,7 @@ footer {
 }
 .mailingListLabel {
   font-size: 16px;
-  color: $white;
+  color: $mailingListFontColor;
 }
 
 .mailingList input {
@@ -128,8 +129,8 @@ fieldset {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  color: $white;
-  background: $oceanBlue;
+  color: $mailingListFontColor;
+  background: $mailingListColor;
   font-family: Gotham;
   padding: 8px 10px;
   margin: 8px 8px;
@@ -138,13 +139,13 @@ fieldset {
   -ms-transition: all 0.1s ease-in-out;
   -o-transition: all 0.1s ease-in-out;
   transition: all 0.1s ease-in-out;
-  border-bottom:1px solid lighten($oceanBlue, 20%);
+  border-bottom:1px solid lighten($mailingListFontColor, 25%);
 }
 .mailingListInput::placeholder {
-  color: lighten($oceanBlue, 20%);
+  color: lighten($mailingListFontColor, 40%);
 }
 .mailingListInput:focus {
-  border-bottom:1px solid $white;
+  border-bottom:1px solid $mailingListFontColor;
 }
 .mailingListContainer {
   display:inline-block;
@@ -156,12 +157,12 @@ fieldset {
 }
 .mailingListButton {
   background-color: transparent;
-  border:1px solid $white;
+  border:1px solid lighten($mailingListFontColor, 25%);
   padding:10px 30px;
   border-radius: 3px;
   margin-left: 24px;
   font-size: 16px;
-  color: $white;
+  color: $mailingListFontColor;
   -webkit-transition: all 0.1s ease-in-out;
   -moz-transition: all 0.1s ease-in-out;
   -ms-transition: all 0.1s ease-in-out;
@@ -169,9 +170,9 @@ fieldset {
   transition: all 0.1s ease-in-out;
 }
 .mailingListButton:hover {
-  color: $oceanBlue;
-  border:2px solid $white;
-  background: $white;
+  color: $mailingListColor;
+  border:2px solid $mailingListFontColor;
+  background: $mailingListFontColor;
   cursor: pointer;
 }
 
