@@ -154,6 +154,7 @@ fieldset {
 
 #mailingList.success {
   background-color: $greenish;
+  border-bottom: 1px solid darken($greenish, 5%);
 }
 .mailingListButton {
   background-color: transparent;
