@@ -83,7 +83,6 @@ body {
   text-align: center;
 }
 #mailingList span {
-  display: inline-block;
 }
 .mailingListLabel {
   font-size: 16px;
@@ -123,8 +122,8 @@ fieldset {
   color: $mailingListFontColor;
   background: $mailingListColor;
   font-family: Gotham;
-  padding: 8px 10px;
-  margin: 8px 8px;
+  padding: 8px 0;
+  margin: 8px 0;
   -webkit-transition: all 0.1s ease-in-out;
   -moz-transition: all 0.1s ease-in-out;
   -ms-transition: all 0.1s ease-in-out;
@@ -151,7 +150,6 @@ fieldset {
   border:1px solid lighten($mailingListFontColor, 25%);
   padding:10px 30px;
   border-radius: 3px;
-  margin-left: 24px;
   font-size: 16px;
   color: $mailingListFontColor;
   -webkit-transition: all 0.1s ease-in-out;
@@ -177,9 +175,81 @@ footer {
 }
 
 @media (min-width: 767px) {
+  #socialFloating {
+  }
+  #socialFloating div {
+  }
+  .spotifyFloatingWrapper, .facebookFloatingWrapper {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 88px;
+    height: 88px;
+  }
+  .socialFloatingLabelMobile {
+    display: none;
+  }
+  .spotifyFloatingWrapper {
+    bottom: 16px;
+    right: 128px;
+  }
+  .facebookFloatingWrapper {
+    bottom: 16px;
+    right: 16px;
+  }
+  .spotifyFloating, .facebookFloating {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    width: 80px;
+    border-radius: 80px;
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    -ms-transition: all 0.1s ease-in-out;
+    -o-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;
+    -webkit-box-shadow: 0px 4px 12px 0px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0px 4px 12px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 4px 12px 0px rgba(0,0,0,0.2);
+  }
+  .spotifyFloating img, .facebookFloating img {
+    width: auto;
+    height: auto;
+  }
+  a.floatingButton {
+    display: block;
+  }
+  .spotifyFloating:hover, .facebookFloating:hover {
+    cursor: pointer;
+    transform: scale(1.15,1.15);
+    -webkit-box-shadow: 0px 2px 16px 0px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0px 2px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 2px 16px 0px rgba(0,0,0,0.2);
+  }
+  .facebookFloating:hover {
+    background-color: #3B5998;
+  }
+  .mailingListInput {
+    padding: 8px 10px;
+    margin: 8px 8px;
+  }
+  #mailingList {
+    padding: 8px 16px;
+  }
+  #mailingList span {
+    display: inline-block;
+  }
+  .mailingListContainer {
+    padding: 0 16px;
+  }
   .wrapper {
     max-width: 960px;
     padding: 0;
+  }
+  .mailingListButton {
+    margin-left: 24px;
   }
   .fullBackground {
     min-width: 100vw;
