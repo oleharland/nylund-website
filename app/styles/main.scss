@@ -74,7 +74,7 @@ body {
 #mailingList {
   background: $mailingListColor;
   border-bottom: 1px solid darken($mailingListColor, 3%);
-  padding: 8px 0;
+  padding: 16px 0;
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
   -ms-transition: all 0.3s ease-in-out;
@@ -83,11 +83,11 @@ body {
   text-align: center;
 }
 #mailingList span {
-  display: inline-block;
 }
 .mailingListLabel {
   font-size: 16px;
   color: $mailingListFontColor;
+  line-height: 1.6em;
 }
 
 .mailingList input {
@@ -122,8 +122,8 @@ fieldset {
   color: $mailingListFontColor;
   background: $mailingListColor;
   font-family: Gotham;
-  padding: 8px 10px;
-  margin: 8px 8px;
+  padding: 8px 0;
+  margin: 8px 0;
   -webkit-transition: all 0.1s ease-in-out;
   -moz-transition: all 0.1s ease-in-out;
   -ms-transition: all 0.1s ease-in-out;
@@ -139,7 +139,7 @@ fieldset {
 }
 .mailingListContainer {
   display:inline-block;
-  padding: 0 8px;
+  padding: 0 16px;
 }
 #mailingList.success {
   background-color: $greenish;
@@ -150,7 +150,6 @@ fieldset {
   border:1px solid lighten($mailingListFontColor, 25%);
   padding:10px 30px;
   border-radius: 3px;
-  margin-left: 24px;
   font-size: 16px;
   color: $mailingListFontColor;
   -webkit-transition: all 0.1s ease-in-out;
@@ -258,8 +257,15 @@ footer {
   .facebookFloating:hover {
     background-color: #3B5998;
   }
+  .mailingListInput {
+    padding: 8px 10px;
+    margin: 8px 8px;
+  }
   #mailingList {
     padding: 8px 16px;
+  }
+  #mailingList span {
+    display: inline-block;
   }
   .mailingListContainer {
     padding: 0 16px;
@@ -267,6 +273,9 @@ footer {
   .wrapper {
     max-width: 960px;
     padding: 0;
+  }
+  .mailingListButton {
+    margin-left: 24px;
   }
   .fullBackground {
     min-width: 100vw;
@@ -290,7 +299,7 @@ footer {
     padding: 0 16px;
   }
   #mailingList {
-    padding: 8px 16px;
+    padding: 8px 0;
     z-index: 99;
     position: fixed;
     width: 100%;
