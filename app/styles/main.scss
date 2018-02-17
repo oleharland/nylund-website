@@ -173,6 +173,24 @@ fieldset {
 }
 .spotifyFloatingWrapper, .facebookFloatingWrapper {
 }
+.spotifyFloating, .facebookFloating {
+  display: flex;
+  height: 56px;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+.spotifyFloating img, .facebookFloating img {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+.socialFloatingLabelMobile {
+  display: inline-block;
+  color: $white;
+  margin-left: 16px;
+}
+
 
 // Footer
 footer {
@@ -195,6 +213,9 @@ footer {
     justify-content: center;
     width: 88px;
     height: 88px;
+  }
+  .socialFloatingLabelMobile {
+    display: none;
   }
   .spotifyFloatingWrapper {
     bottom: 16px;
