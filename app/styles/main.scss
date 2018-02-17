@@ -74,7 +74,7 @@ body {
 #mailingList {
   background: $mailingListColor;
   border-bottom: 1px solid darken($mailingListColor, 3%);
-  padding: 8px 0;
+  padding: 16px 0;
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
   -ms-transition: all 0.3s ease-in-out;
@@ -88,6 +88,7 @@ body {
 .mailingListLabel {
   font-size: 16px;
   color: $mailingListFontColor;
+  line-height: 1.6em;
 }
 
 .mailingList input {
@@ -139,7 +140,7 @@ fieldset {
 }
 .mailingListContainer {
   display:inline-block;
-  padding: 0 8px;
+  padding: 0 16px;
 }
 #mailingList.success {
   background-color: $greenish;
@@ -202,7 +203,7 @@ footer {
     padding: 0 16px;
   }
   #mailingList {
-    padding: 8px 16px;
+    padding: 8px 0;
     z-index: 99;
     position: fixed;
     width: 100%;
