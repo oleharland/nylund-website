@@ -8,8 +8,6 @@ body {
   background: $white;
   color: $black;
 }
-
-
 .wrapper {
   padding-left: 16px;
   padding-right: 16px;
@@ -17,6 +15,8 @@ body {
   padding-bottom: 32px;
   width: 100%;
 }
+
+// Main section
 .profilePicture img {
   width: 100%;
   max-height: 60vh;
@@ -31,7 +31,6 @@ body {
   padding-right: 16px;
   padding-bottom: 80px;
 }
-
 .headline {
   font-family: "GothamBold";
   font-size: 56px;
@@ -52,15 +51,6 @@ body {
   line-height: 1.6em;
   color: $grey;
 }
-
-footer {
-  background: $black;
-  color: $white;
-}
-.copyrights {
-  color: lighten( $black, 25% );
-}
-
 .externalLink:link, .externalLink:visited, .externalLink:active {
   color: $oceanBlue;
   -webkit-transition: all 0.3s ease-in-out;
@@ -80,6 +70,7 @@ footer {
     content: "⇀";
 }
 
+// mailingList
 #mailingList {
   background: $mailingListColor;
   border-bottom: 1px solid darken($mailingListColor, 3%);
@@ -102,7 +93,6 @@ footer {
 .mailingList input {
   display: inline-block;
 }
-
 fieldset {
   display: inline-block;
   -webkit-margin-start: 0px;
@@ -151,7 +141,6 @@ fieldset {
   display:inline-block;
   padding: 0 8px;
 }
-
 #mailingList.success {
   background-color: $greenish;
   border-bottom: 1px solid darken($greenish, 5%);
@@ -187,7 +176,17 @@ fieldset {
 
 // Starting with desktop css
 
+// Footer
+footer {
+  background: $black;
+  color: $white;
+}
+.copyrights {
+  color: lighten( $black, 25% );
+}
+
 @media (min-width: 767px) {
+<<<<<<< HEAD
   #socialFloating {
   }
   #socialFloating div {
@@ -242,33 +241,44 @@ fieldset {
   }
   .mailingListContainer {
     padding: 0 16px;
+=======
+  .wrapper {
+    max-width: 960px;
+    padding: 0;
+  }
+  .fullBackground {
+    min-width: 100vw;
+    min-height: 100vh;
+>>>>>>> master
   }
   .container {
     display: flex;
     align-items: center;
     justify-content: center;
   }
+
+  // Main section
   .introText {
-    margin-left: -80px;
-    max-width: 560px;
-    background: none;
-  }
-  .fullBackground {
-    min-width: 100vw;
-    min-height: 100vh;
-  }
-  .wrapper {
-    max-width: 960px;
-    padding: 0;
-  }
-  footer {
-    padding-top: 80px;
-    padding-bottom: 160px;
+      margin-left: -80px;
+      max-width: 560px;
+      background: none;
+    }
+
+  // MailingList
+  .mailingListContainer {
+    padding: 0 16px;
   }
   #mailingList {
+    padding: 8px 16px;
     z-index: 99;
     position: fixed;
     width: 100%;
     top: 0px;
+  }
+
+  // Footer
+  footer {
+    padding-top: 80px;
+    padding-bottom: 160px;
   }
 }
