@@ -29,7 +29,7 @@ body {
   line-height: 1.6em;
   padding-left: 16px;
   padding-right: 16px;
-  padding-bottom: 80px;
+  padding-bottom: 40px;
 }
 .headline {
   font-family: "GothamBold";
@@ -240,6 +240,10 @@ footer {
     -webkit-box-shadow: 0px 4px 12px 0px rgba(0,0,0,0.2);
     -moz-box-shadow: 0px 4px 12px 0px rgba(0,0,0,0.2);
     box-shadow: 0px 4px 12px 0px rgba(0,0,0,0.2);
+  }
+  .spotifyFloating img, .facebookFloating img {
+    width: auto;
+    height: auto;
   }
   a.floatingButton {
     display: block;
