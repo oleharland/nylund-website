@@ -174,8 +174,6 @@ fieldset {
 .spotifyFloatingWrapper, .facebookFloatingWrapper {
 }
 
-// Starting with desktop css
-
 // Footer
 footer {
   background: $black;
@@ -186,7 +184,6 @@ footer {
 }
 
 @media (min-width: 767px) {
-<<<<<<< HEAD
   #socialFloating {
   }
   #socialFloating div {
@@ -241,7 +238,7 @@ footer {
   }
   .mailingListContainer {
     padding: 0 16px;
-=======
+  }
   .wrapper {
     max-width: 960px;
     padding: 0;
@@ -249,7 +246,6 @@ footer {
   .fullBackground {
     min-width: 100vw;
     min-height: 100vh;
->>>>>>> master
   }
   .container {
     display: flex;
