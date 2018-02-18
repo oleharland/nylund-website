@@ -132,7 +132,7 @@ fieldset {
   border-bottom:1px solid lighten($mailingListFontColor, 25%);
 }
 .mailingListInput::placeholder {
-  color: lighten($mailingListFontColor, 40%);
+  color: lighten($mailingListFontColor, 25%);
 }
 .mailingListInput:focus {
   border-bottom:1px solid $mailingListFontColor;
