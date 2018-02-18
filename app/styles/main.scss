@@ -29,7 +29,7 @@ body {
   line-height: 1.6em;
   padding-left: 16px;
   padding-right: 16px;
-  padding-bottom: 80px;
+  padding-bottom: 40px;
 }
 .headline {
   font-family: "GothamBold";
@@ -164,6 +164,32 @@ fieldset {
   background: $mailingListFontColor;
   cursor: pointer;
 }
+.spotifyFloating {
+  background-color: #1ED761;
+}
+.facebookFloating {
+  background-color: #3B5998;
+}
+.spotifyFloatingWrapper, .facebookFloatingWrapper {
+}
+.spotifyFloating, .facebookFloating {
+  display: flex;
+  height: 56px;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+.spotifyFloating img, .facebookFloating img {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+.socialFloatingLabelMobile {
+  display: inline-block;
+  color: $white;
+  margin-left: 16px;
+}
+
 
 // Footer
 footer {
