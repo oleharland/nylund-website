@@ -27,10 +27,10 @@
 
     <!-- Tile icon for Win8 (144x144 + tile color) -->
     <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
-    <meta name="msapplication-TileColor" content="#2F3BA2">
+    <meta name="msapplication-TileColor" content="#FFFFFF">
 
     <!-- Color the status bar on mobile devices -->
-    <meta name="theme-color" content="#000000">
+    <meta name="theme-color" content="#FFFFFF">
 
     <!-- SEO: If your mobile URL is different from the desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones -->
     <!--
@@ -47,7 +47,31 @@
     </header>
     -->
 
-    <section class="fullBackground container">
+    <div id="mailingList" class="">
+      <div class="mailingListContainer">
+
+        <!-- Change in sucess state by enabling this paragraph and add success class to mailingList div
+        <p class="mailingListLabel">Great! You're signed up for the list!</p> -->
+
+        <span>
+          <p class="mailingListLabel">Never miss a realease and join my mailing list:</p>
+        </span>
+        <span>
+          <fieldset>
+            <form action="" class="mailingList">
+              <span>
+                <input type="text" class="mailingListInput" placeholder="Your email adress" required>
+              </span>
+              <span>
+                <input type="submit" class="mailingListButton">
+              </span>
+            </form>
+          </fieldset>
+        </span>
+      </div>
+    </div>
+
+    <section class="fullBackground container" id="stage">
       <div class="profilePicture">
         <img src="images/nylund-artist-portrait.jpg" alt="">
       </div>
@@ -55,8 +79,24 @@
         <h1 class="headline">Nylund</h1>
         <h2 class="subline">Electronica with a wide range of influences.</h2>
         <p class="copy">Nylund produces electronica tracks drawing from a wide range of musical and cultural influences. Inspired by the diverse sensations and interactions we become exposed to in our lives, his music combines the familiar with the unheard to create new, yet accessible experiences.</p>
+        <!-- <a href="https://www.facebook.com/nylundofficial/" class="externalLink facebookLink">Visit my offical facebook site</a> -->
       </div>
     </section>
+
+    <div class="" id="socialFloating">
+      <div class="socialWrapper">
+        <div class="spotifyFloatingWrapper">
+            <a href="#" class="spotifyFloating">
+              <img src="images/socialIconSpotify.svg" alt="">
+              <p class="socialFloatingLabelMobile">Listen on Spotify</p></a>
+        </div>
+        <div class="facebookFloatingWrapper">
+            <a href="#" class="facebookFloating">
+              <img src="images/socialIconFacebook.svg" width="36px" height="36px" alt="">
+              <p class="socialFloatingLabelMobile">Offical Facebook Site</p></a>
+        </div>
+      </div>
+    </div>
 
     <section id="sanctuaryAlbum">
       <div class="container">
@@ -74,7 +114,6 @@
         </div>
       </div>
     </div>
-
     </section>
 
     <footer>

@@ -8,14 +8,15 @@ body {
   background: $white;
   color: $black;
 }
-
-
 .wrapper {
   padding-left: 16px;
   padding-right: 16px;
   padding-top: 40px;
   padding-bottom: 32px;
+  width: 100%;
 }
+
+// Main section
 .profilePicture img {
   width: 100%;
   max-height: 60vh;
@@ -28,8 +29,8 @@ body {
   line-height: 1.6em;
   padding-left: 16px;
   padding-right: 16px;
+  padding-bottom: 40px;
 }
-
 .headline {
   font-family: "GothamBold";
   font-size: 56px;
@@ -50,7 +51,147 @@ body {
   line-height: 1.6em;
   color: $grey;
 }
+.externalLink:link, .externalLink:visited, .externalLink:active {
+  color: $oceanBlue;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  text-decoration: none;
+  padding-bottom: 4px;
+  border-bottom: 1px solid;
+}
+.externalLink:hover, .externalLink:focus {
+  color: $accentcolor;
+}
+.externalLink::after {
+    padding-left: 8px;
+    content: "⇀";
+}
 
+// mailingList
+#mailingList {
+  background: $mailingListColor;
+  border-bottom: 1px solid darken($mailingListColor, 3%);
+  padding: 16px 0;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  text-align: center;
+}
+#mailingList span {
+}
+.mailingListLabel {
+  font-size: 16px;
+  color: $mailingListFontColor;
+  line-height: 1.6em;
+}
+
+.mailingList input {
+  display: inline-block;
+}
+fieldset {
+  display: inline-block;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+  -webkit-padding-before: 0em;
+  -webkit-padding-start: 0em;
+  -webkit-padding-end: 0em;
+  -webkit-padding-after: 0em;
+  border: 0px;
+  border-image-source: initial;
+  border-image-slice: initial;
+  border-image-width: initial;
+  border-image-outset: initial;
+  border-image-repeat: initial;
+  min-width: -webkit-min-content;
+  padding: 0px;
+}
+.mailingListInput {
+  display: block;
+  width: 100%;
+  font-size: 16px;
+  border:0px;
+  outline: none;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  color: $mailingListFontColor;
+  background: $mailingListColor;
+  font-family: Gotham;
+  padding: 8px 0;
+  margin: 8px 0;
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  -ms-transition: all 0.1s ease-in-out;
+  -o-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+  border-bottom:1px solid lighten($mailingListFontColor, 25%);
+}
+.mailingListInput::placeholder {
+  color: lighten($mailingListFontColor, 25%);
+}
+.mailingListInput:focus {
+  border-bottom:1px solid $mailingListFontColor;
+}
+.mailingListContainer {
+  display:inline-block;
+  padding: 0 16px;
+}
+#mailingList.success {
+  background-color: $greenish;
+  border-bottom: 1px solid darken($greenish, 5%);
+}
+.mailingListButton {
+  background-color: transparent;
+  border:1px solid lighten($mailingListFontColor, 25%);
+  padding:10px 30px;
+  border-radius: 3px;
+  font-size: 16px;
+  color: $mailingListFontColor;
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  -ms-transition: all 0.1s ease-in-out;
+  -o-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+}
+.mailingListButton:hover {
+  color: $mailingListColor;
+  border:2px solid $mailingListFontColor;
+  background: $mailingListFontColor;
+  cursor: pointer;
+}
+.spotifyFloating {
+  background-color: #1ED761;
+}
+.facebookFloating {
+  background-color: #3B5998;
+}
+.spotifyFloatingWrapper, .facebookFloatingWrapper {
+}
+.spotifyFloating, .facebookFloating {
+  display: flex;
+  height: 56px;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+.spotifyFloating img, .facebookFloating img {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+.socialFloatingLabelMobile {
+  display: inline-block;
+  color: $white;
+  margin-left: 16px;
+}
+
+
+// Footer
 footer {
   background: $black;
   color: $white;
@@ -64,27 +205,114 @@ footer {
 }
 
 @media (min-width: 767px) {
-  .container {
+  #socialFloating {
+  }
+  #socialFloating div {
+  }
+  .spotifyFloatingWrapper, .facebookFloatingWrapper {
+    position: fixed;
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 88px;
+    height: 88px;
   }
-  .introText {
-    margin-left: -80px;
-    max-width: 560px;
-    background: none;
+  .socialFloatingLabelMobile {
+    display: none;
   }
-  .fullBackground {
-    min-width: 100vw;
-    min-height: 100vh;
+  .spotifyFloatingWrapper {
+    bottom: 16px;
+    right: 128px;
+  }
+  .facebookFloatingWrapper {
+    bottom: 16px;
+    right: 16px;
+  }
+  .spotifyFloating, .facebookFloating {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    width: 80px;
+    border-radius: 80px;
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    -ms-transition: all 0.1s ease-in-out;
+    -o-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;
+    -webkit-box-shadow: 0px 4px 12px 0px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0px 4px 12px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 4px 12px 0px rgba(0,0,0,0.2);
+  }
+  .spotifyFloating img, .facebookFloating img {
+    width: auto;
+    height: auto;
+  }
+  a.floatingButton {
+    display: block;
+  }
+  .spotifyFloating:hover, .facebookFloating:hover {
+    cursor: pointer;
+    transform: scale(1.15,1.15);
+    -webkit-box-shadow: 0px 2px 16px 0px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0px 2px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 2px 16px 0px rgba(0,0,0,0.2);
+  }
+  .facebookFloating:hover {
+    background-color: #3B5998;
+  }
+  .mailingListInput {
+    padding: 8px 10px;
+    margin: 8px 8px;
+  }
+  #mailingList {
+    padding: 8px 16px;
+  }
+  #mailingList span {
+    display: inline-block;
+  }
+  .mailingListContainer {
+    padding: 0 16px;
   }
   .wrapper {
     max-width: 960px;
     padding: 0;
   }
+  .mailingListButton {
+    margin-left: 24px;
+  }
+  .fullBackground {
+    min-width: 100vw;
+    min-height: 100vh;
+  }
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  // Main section
+  .introText {
+      margin-left: -80px;
+      max-width: 560px;
+      background: none;
+    }
+
+  // MailingList
+  .mailingListContainer {
+    padding: 0 16px;
+  }
+  #mailingList {
+    padding: 8px 0;
+    z-index: 99;
+    position: fixed;
+    width: 100%;
+    top: 0px;
+  }
+
+  // Footer
   footer {
     padding-top: 80px;
     padding-bottom: 160px;
   }
-
 }
