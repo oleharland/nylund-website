@@ -4,7 +4,7 @@
 @import "variables.scss";
 
 body {
-  font-family: "Gotham", Helvetica, Arial;
+  font-family: $customFont, Helvetica, Arial;
   background: $white;
   color: $black;
 }
@@ -32,7 +32,8 @@ body {
   padding-bottom: 40px;
 }
 .headline {
-  font-family: "GothamBold";
+  font-family: $customFont;
+  font-weight: 700;
   font-size: 56px;
   color: $black;
   line-height: 1em;
@@ -121,7 +122,7 @@ fieldset {
   box-sizing: border-box;
   color: $mailingListFontColor;
   background: $mailingListColor;
-  font-family: Gotham;
+  font-family: $customFont;
   padding: 8px 0;
   margin: 8px 0;
   -webkit-transition: all 0.1s ease-in-out;
