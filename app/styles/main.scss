@@ -4,9 +4,13 @@
 @import "variables.scss";
 
 body {
-  font-family: "Gotham", Helvetica, Arial;
+  font-family: 'Quicksand', sans-serif;
   background: $white;
   color: $black;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
 }
 .wrapper {
   padding-left: 16px;
@@ -32,7 +36,8 @@ body {
   padding-bottom: 40px;
 }
 .headline {
-  font-family: "GothamBold";
+  font-family: 'Raleway',sans-serif;
+  font-weight: 800;
   font-size: 56px;
   color: $black;
   line-height: 1em;
