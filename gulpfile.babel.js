@@ -141,7 +141,9 @@ gulp.task('templates', () =>
 
       gulp
         .src('app/index.hbs')
-        .pipe(hb().data(data))
+        .pipe(hb()
+          .data(data)
+          .partials('app/components/**/*.hbs'))
         .pipe(rename(path => {
           path.basename = name;
           path.extname = '.html';
