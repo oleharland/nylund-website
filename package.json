@@ -39,5 +39,10 @@
   },
   "eslintConfig": {
     "extends": "google"
+  },
+  "dependencies": {
+    "gulp-hb": "^7.0.1",
+    "gulp-rename": "^1.2.2",
+    "through2": "^2.0.3"
   }
 }

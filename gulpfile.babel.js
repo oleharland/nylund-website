@@ -33,8 +33,12 @@ import swPrecache from 'sw-precache';
 import gulpLoadPlugins from 'gulp-load-plugins';
 import {output as pagespeed} from 'psi';
 import pkg from './package.json';
+
 import s3 from 's3';
 import AWS from 'aws-sdk';
+import hb from 'gulp-hb';
+import through from 'through2';
+import rename from 'gulp-rename';
 
 const $ = gulpLoadPlugins();
 const reload = browserSync.reload;
@@ -62,7 +66,7 @@ gulp.task('images', () =>
 gulp.task('copy', () =>
   gulp.src([
     'app/*',
-    '!app/*.html',
+    '!app/*.hbs',
     'node_modules/apache-server-configs/dist/.htaccess'
   ], {
     dot: true
@@ -129,9 +133,28 @@ gulp.task('scripts', () =>
     .pipe(gulp.dest('.tmp/scripts'))
 );
 
+gulp.task('templates', () =>
+  gulp.src('app/contexts/*.json')
+    .pipe(through.obj((file, enc, cb) => {
+      let name = path.basename(file.history[0], '.json');
+      let data = JSON.parse(file.contents.toString());
+
+      gulp
+        .src('app/index.hbs')
+        .pipe(hb().data(data))
+        .pipe(rename(path => {
+          path.basename = name;
+          path.extname = '.html';
+        }))
+        .pipe(gulp.dest(`app`))
+        .on('error', cb)
+        .on('end', cb);
+    }))
+);
+
 // Scan your HTML for assets & optimize them
 gulp.task('html', () => {
-  return gulp.src('app/**/*.html')
+  return gulp.src('dist/**/*.html')
     .pipe($.useref({
       searchPath: '{.tmp,app}',
       noAssets: true
@@ -155,10 +178,10 @@ gulp.task('html', () => {
 });
 
 // Clean output directory
-gulp.task('clean', () => del(['.tmp', 'dist/*', '!dist/.git'], {dot: true}));
+gulp.task('clean', () => del(['.tmp', 'dist/*', '!dist/.git', 'app/*.html'], {dot: true}));
 
 // Watch files for changes & reload
-gulp.task('serve', ['scripts', 'styles'], () => {
+gulp.task('serve', ['templates', 'scripts', 'styles'], () => {
   browserSync({
     notify: false,
     // Customize the Browsersync console logging prefix
@@ -173,6 +196,7 @@ gulp.task('serve', ['scripts', 'styles'], () => {
     port: 3000
   });
 
+  gulp.watch(['app/**/*.json', 'app/**/*.hbs'], ['templates']);
   gulp.watch(['app/**/*.html'], reload);
   gulp.watch(['app/styles/**/*.{scss,css}'], ['styles', reload]);
   gulp.watch(['app/scripts/**/*.js'], ['lint', 'scripts', reload]);
@@ -199,7 +223,9 @@ gulp.task('serve:dist', ['default'], () =>
 gulp.task('default', ['clean'], cb =>
   runSequence(
     'styles',
-    ['lint', 'html', 'scripts', 'images', 'copy'],
+    ['lint', 'scripts', 'images', 'templates'],
+    'copy',
+    'html',
     'generate-service-worker',
     cb
   )
@@ -258,7 +284,6 @@ gulp.task('generate-service-worker', ['copy-sw-scripts'], () => {
 // try { require('require-dir')('tasks'); } catch (err) { console.error(err); }
 
 gulp.task('deploy', ['default'], cb => {
-
   const client = s3.createClient({
     s3Client: new AWS.S3(AWS.config.loadFromPath('./aws_config.json'))
   });
