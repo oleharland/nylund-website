@@ -1,17 +1,17 @@
-<div id="mailingList" class="">
+<div id="mailingList" class="{{clazz}}">
   <div class="mailingListContainer">
 
     <!-- Change in sucess state by enabling this paragraph and add success class to mailingList div
     <p class="mailingListLabel">Great! You're signed up for the list!</p> -->
 
     <span>
-        <p class="mailingListLabel">Get a handpicked selection of tracks for free:</p>
+        <p class="mailingListLabel">{{ downloadCopy }}</p>
       </span>
     <span>
       <fieldset>
         <form action="" class="mailingList">
           <span>
-            <input type="text" class="mailingListInput" placeholder="Your email adress" required>
+            <input type="text" class="mailingListInput" placeholder="Your email address" required>
           </span>
           <span>
             <input type="submit" class="mailingListButton" value="Download">

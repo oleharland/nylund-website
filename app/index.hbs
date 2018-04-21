@@ -51,7 +51,9 @@
     </header>
     -->
 
-    {{> mailingList }}
+    {{#unless isLandingPage}}
+      {{> mailingList }}
+    {{/unless}}
 
     <section class="fullBackground container" id="stage">
       <div class="profilePicture">
@@ -60,8 +62,11 @@
       <div class="introText">
         <h1 class="headline">Nylund</h1>
         <h2 class="subline">Organic electronica, haunting melodies and jagged beats</h2>
-        <p class="copy">My music is for those who see beauty in both delicate harmony and hard-rocking electronic grooves. Combining classic and modern elements, it’s like an old school soundtrack featuring the likes of Bonobo, Röyksopp and Nils Frahm.</p>
+        <p class="copy">My music is for those who see beauty in both delicate harmony and hard-rocking electronic grooves. Combining classic and modern elements, it’s an old school soundtrack featuring the likes of Bonobo, Röyksopp and Nils Frahm.</p>
         <!-- <a href="https://www.facebook.com/nylundofficial/" class="externalLink facebookLink">Visit my offical facebook site</a> -->
+        {{#if isLandingPage}}
+          {{> mailingList }}
+        {{/if}}
       </div>
     </section>
 

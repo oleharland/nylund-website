@@ -8,5 +8,5 @@ $accentcolor: #13F5A4;
 $silver: #F6F6F6;
 $oceanBlue: #015A9E;
 $greenish: #23CD71;
-$mailingListColor: #F5F7F9;
-$mailingListFontColor: darken($mailingListColor, 40%) ;
+$mailingListColor: #ffffff; //#F5F7F9;
+$mailingListFontColor: $oceanBlue;

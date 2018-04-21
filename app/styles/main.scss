@@ -77,8 +77,7 @@ body {
 
 // mailingList
 #mailingList {
-  background: $mailingListColor;
-  border-bottom: 1px solid darken($mailingListColor, 3%);
+
   padding: 16px 0;
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
@@ -93,6 +92,7 @@ body {
   font-size: 16px;
   color: $mailingListFontColor;
   line-height: 1.6em;
+  font-weight: 600;
 }
 
 .mailingList input {
@@ -126,7 +126,7 @@ fieldset {
   box-sizing: border-box;
   color: $mailingListFontColor;
   background: $mailingListColor;
-  font-family: Gotham;
+  font-family: 'Quicksand', sans-serif;
   padding: 8px 0;
   margin: 8px 0;
   -webkit-transition: all 0.1s ease-in-out;
@@ -151,12 +151,12 @@ fieldset {
   border-bottom: 1px solid darken($greenish, 5%);
 }
 .mailingListButton {
-  background-color: transparent;
+  background-color: $mailingListFontColor;
   border:1px solid lighten($mailingListFontColor, 25%);
   padding:10px 30px;
   border-radius: 3px;
   font-size: 16px;
-  color: $mailingListFontColor;
+  color: $mailingListColor;
   -webkit-transition: all 0.1s ease-in-out;
   -moz-transition: all 0.1s ease-in-out;
   -ms-transition: all 0.1s ease-in-out;
@@ -303,10 +303,16 @@ footer {
   .mailingListContainer {
     padding: 0 16px;
   }
+  #mailingList.fixed {
+    position: fixed;
+    background: $mailingListColor;
+    border-bottom: 1px solid darken($mailingListColor, 3%);
+  }
+
   #mailingList {
     padding: 8px 0;
     z-index: 99;
-    position: fixed;
+
     width: 100%;
     top: 0px;
   }
