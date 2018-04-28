@@ -125,7 +125,7 @@ fieldset {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   color: $mailingListFontColor;
-  background: $mailingListColor;
+  background: transparent;
   font-family: 'Quicksand', sans-serif;
   padding: 8px 0;
   margin: 8px 0;
@@ -146,6 +146,11 @@ fieldset {
   display:inline-block;
   padding: 0 16px;
 }
+
+.mailingListOutcome {
+  font-weight: normal !important;
+}
+
 #mailingList.success {
   background-color: $greenish;
   border-bottom: 1px solid darken($greenish, 5%);
@@ -305,7 +310,6 @@ footer {
   }
   #mailingList.fixed {
     position: fixed;
-    background: $mailingListColor;
     border-bottom: 1px solid darken($mailingListColor, 3%);
   }
 

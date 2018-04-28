@@ -1,12 +1,10 @@
 <div id="mailingList" class="{{clazz}}">
   <div class="mailingListContainer">
 
-    <!-- Change in sucess state by enabling this paragraph and add success class to mailingList div
-    <p class="mailingListLabel">Great! You're signed up for the list!</p> -->
 
     <span>
         <p class="mailingListLabel">{{ downloadCopy }}</p>
-      </span>
+    </span>
     <span>
       <fieldset>
         <form action="https://facebook.us18.list-manage.com/subscribe/post" method="POST" class="mailingList">
@@ -24,5 +22,7 @@
 
       </fieldset>
     </span>
+    <!-- Change in sucess state by enabling this paragraph and add success class to mailingList div -->
+    <p class="mailingListLabel mailingListOutcome" hidden id="successLabel">Great, you should have some music in your inbox!</p>
   </div>
 </div>
