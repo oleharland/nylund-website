@@ -17,7 +17,7 @@
  *
  */
 /* eslint-env browser */
-(function () {
+(function() {
   'use strict';
 
   // Check to make sure service workers are supported in the current browser,
@@ -36,9 +36,9 @@
   if ('serviceWorker' in navigator &&
     (window.location.protocol === 'https:' || isLocalhost)) {
     navigator.serviceWorker.register('service-worker.js')
-      .then(function (registration) {
+      .then(function(registration) {
         // updatefound is fired if service-worker.js changes.
-        registration.onupdatefound = function () {
+        registration.onupdatefound = function() {
           // updatefound is also fired the very first time the SW is installed,
           // and there's no need to prompt for a reload at that point.
           // So check here to see if the page is already controlled,
@@ -48,7 +48,7 @@
             // https://slightlyoff.github.io/ServiceWorker/spec/service_worker/index.html#service-worker-container-updatefound-event
             var installingWorker = registration.installing;
 
-            installingWorker.onstatechange = function () {
+            installingWorker.onstatechange = function() {
               switch (installingWorker.state) {
                 case 'installed':
                   // At this point, the old content will have been purged and the
@@ -67,16 +67,21 @@
             };
           }
         };
-      }).catch(function (e) {
-      console.error('Error during service worker registration:', e);
-    });
+      }).catch(function(e) {
+        console.error('Error during service worker registration:', e);
+      });
   }
 
-  $('.mailingList').submit(function (e) {
+  $('.mailingList').submit(function(e) {
     e.preventDefault();
     submitSubscribeForm($(this));
   });
 
+  /**
+   * Submits the form, signing the user up to Mailchimp.
+   *
+   * @param {object} $form the form that is to be submitted
+   */
   function submitSubscribeForm($form) {
     $.ajax({
       type: 'GET',
@@ -90,12 +95,13 @@
       error: function() {
       },
 
-      success: function (data) {
+      success: function(data) {
         if (data.result === 'success') {
           $('#mailingList').addClass('success');
           $('#successLabel').text('Please check your inbox :)!');
         } else {
-          var message = data.msg || 'Sorry. Unable to subscribe. Please try again later.';
+          var message = data.msg ||
+            'Sorry. Unable to subscribe. Please try again later.';
 
           if (data.msg && data.msg.indexOf('already subscribed') >= 0) {
             message = 'You\'re already subscribed. Thank you.';
