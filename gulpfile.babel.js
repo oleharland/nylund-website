@@ -48,7 +48,8 @@ gulp.task('lint', () =>
   gulp.src(['app/scripts/**/*.js', '!node_modules/**'])
     .pipe($.eslint({
       globals: [
-        '$'
+        '$',
+        'fbq'
       ]
     }))
     .pipe($.eslint.format())

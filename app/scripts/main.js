@@ -99,6 +99,7 @@
         if (data.result === 'success') {
           $('#mailingList').addClass('success');
           $('#successLabel').text('Please check your inbox :)!');
+          fbq('track', 'CompleteRegistration');
         } else {
           var message = data.msg ||
             'Sorry. Unable to subscribe. Please try again later.';
